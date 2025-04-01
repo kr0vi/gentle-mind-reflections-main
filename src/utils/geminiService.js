@@ -1,21 +1,13 @@
-/**
- * Simplified Gemini API service
- * This handles communication with the Gemini API or provides fallback responses
- */
 
-// Check if API key is available
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
 const USE_FALLBACK = !API_KEY;
 
-/**
- * Generate a system prompt based on user preferences
- */
 export const generateSystemPrompt = (preferences, mood) => {
   const { therapyStyle, topics, userName } = preferences;
   
   let prompt = "You are ReflectBot, an AI mental health companion. ";
   
-  // Add style instructions
+
   if (therapyStyle === 'empathetic') {
     prompt += "Focus on providing empathetic emotional support. ";
   } else if (therapyStyle === 'solution-focused') {
@@ -24,7 +16,6 @@ export const generateSystemPrompt = (preferences, mood) => {
     prompt += "Provide a balanced approach to mental health support. ";
   }
   
-  // Add personalization if name is available
   if (userName) {
     prompt += `Address the user by their name, ${userName}. `;
   }
@@ -32,19 +23,15 @@ export const generateSystemPrompt = (preferences, mood) => {
   return prompt;
 };
 
-/**
- * Get a response from the Gemini API or fallback to canned responses
- */
 export const getGeminiResponse = async (messages, preferences, mood) => {
   try {
-    // Use fallbacks if no API key
+
     if (USE_FALLBACK) {
       return getFallbackResponse(preferences, mood);
     }
     
     const systemPrompt = generateSystemPrompt(preferences, mood);
     
-    // Format conversation for Gemini API
     const formattedMessages = [
       { role: 'system', parts: [{ text: systemPrompt }] },
       ...messages.map(msg => ({
@@ -81,9 +68,7 @@ export const getGeminiResponse = async (messages, preferences, mood) => {
   }
 };
 
-/**
- * Provide fallback responses when the API is not available
- */
+
 const getFallbackResponse = (preferences, mood) => {
   const { therapyStyle, userName } = preferences;
   const greeting = userName ? `${userName}, ` : '';

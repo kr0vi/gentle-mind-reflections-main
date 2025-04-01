@@ -1,0 +1,14 @@
+export const API_CONFIG = {
+  GEMINI_API_KEY: import.meta.env.VITE_GEMINI_API_KEY,
+  MAX_TOKENS: 1000,
+  TEMPERATURE: 0.7,
+  TOP_P: 0.8,
+  TOP_K: 40
+};
+
+export const APP_CONFIG = {
+  MAX_MESSAGE_LENGTH: 500,
+  MAX_CONVERSATION_LENGTH: 50,
+  SAVE_INTERVAL: 30000, // 30 seconds
+  DEFAULT_THEME: 'light'
+}; 
