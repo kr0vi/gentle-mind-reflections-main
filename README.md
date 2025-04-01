@@ -1,150 +1,69 @@
-# Gentle Mind Reflections - Mental Health Chatbot
+# Gentle Mind Reflections
 
-A simple AI-powered mental health chatbot that provides personalized therapeutic conversations based on user preferences.
-
-## How It Works
-
-This application allows users to:
-1. Choose their preferred therapy style (Balanced, Empathetic, Solution-focused)
-2. Select topics of interest (Anxiety, Depression, Stress, etc.)
-3. Chat with an AI that responds based on these preferences
-4. Save their conversation history
-
-## Project Structure
-
-### Main Components
-
-- **App.jsx**: Main entry point that sets up the routes and wraps the app with providers
-- **ChatContainer.jsx**: Handles the chat interface and messages between user and AI
-- **ChatPreferences.jsx**: Form for users to select their therapy preferences
-- **Message.jsx**: Individual message component for chat bubbles
-- **UserInput.jsx**: Text input area for users to type messages
-- **MoodSelector.jsx**: Component for selecting the current mood
-
-### Pages
-
-- **ChatPage.jsx**: Page that displays the chat interface
-- **PreferencesPage.jsx**: Page for customizing chat preferences
-- **LandingPage.jsx**: Welcome page with app intro
-- **OnboardingForm.jsx**: Initial user setup page
-- **NotFound.jsx**: 404 error page
-
-### Context (State Management)
-
-- **ChatPreferencesContext.jsx**: Manages and provides user preferences across the app
-- **ThemeContext.jsx**: Manages theme colors and dark/light mode
-
-### Utilities
-
-- **geminiService.js**: Handles communication with the Gemini AI API or provides fallback responses
-- **reflectionData.js**: Contains predefined prompts and responses for different moods
-- **exportUtils.js**: Functions for saving chat conversations
-- **config.js**: Application configuration settings
+A mindful AI chatbot designed to help users process their thoughts and feelings in a safe, supportive space.
 
 ## Features
 
-- **Personalized Therapy Experience**: Different therapy styles affect AI responses
-- **Topic Selection**: Focus on specific mental health topics
-- **Mood-Based Responses**: AI adapts to user's current emotional state
-- **Themed UI**: Interface changes based on selected therapy style
-- **Conversation Export**: Save chat history as a text file
+- 🤖 AI-powered reflection companion
+- 🌙 Dark/Light theme support
+- 😊 Mood tracking and analysis
+- 💭 Guided reflection prompts
+- 📱 Responsive design
+- 🔒 Safe and private conversations
 
-## Running the Application
+## Getting Started
 
-1. Install dependencies:
-   ```
-   npm install
-   ```
+### Prerequisites
 
-2. Start the development server:
-   ```
-   npm run dev
-   ```
+- Node.js (v16 or higher)
+- npm or yarn
+- Gemini API key
 
-3. Access the application at http://localhost:8080
+### Installation
 
-## Using the Gemini API (Optional)
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/gentle-mind-reflections.git
+cd gentle-mind-reflections
+```
 
-1. Get an API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. Create a `.env` file with:
-   ```
-   VITE_GEMINI_API_KEY=your_api_key_here
-   ```
-3. Restart the application
+2. Install dependencies:
+```bash
+npm install
+```
 
-Without an API key, the app will use fallback responses to demonstrate functionality.
+3. Create a `.env` file in the root directory and add your Gemini API key:
+```
+VITE_GEMINI_API_KEY=your_api_key_here
+```
 
-## Project info
-
-**URL**: https://lovable.dev/projects/369a33cc-9055-4d25-bcff-99f56593b86d
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/369a33cc-9055-4d25-bcff-99f56593b86d) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Set up your Gemini API key (see instructions above)
-
-# Step 5: Start the development server with auto-reloading and an instant preview.
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Deployment
 
-**Use GitHub Codespaces**
+This project can be deployed on various platforms:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Vercel
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add your environment variables in Vercel's dashboard
+4. Deploy!
 
-## What technologies are used for this project?
+### Netlify
+1. Push your code to GitHub
+2. Connect your repository to Netlify
+3. Add your environment variables in Netlify's dashboard
+4. Deploy!
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-- Google Gemini API
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/369a33cc-9055-4d25-bcff-99f56593b86d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
